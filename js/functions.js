@@ -17,3 +17,20 @@ var selectProjects = function(tab, category){
 	document.getElementById(category).style.display = "block";
     tab.currentTarget.className = "active";
 };
+
+var sendCustomEmail = function() {
+    var name = document.getElementById('input-name').value;
+    var email = document.getElementById('input-email').value;
+    var subject = document.getElementById('input-subject').value;
+    var message = document.getElementById('input-message').value;
+
+    var link = "mailto:musooff@gmail.com"
+         + "?cc=" + email
+         + "&subject=" + subject
+         + "&body=" + message
+         + "\n\nSincerely,\n"+name
+    ;
+    
+    window.open(link)
+
+}

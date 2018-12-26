@@ -74,14 +74,23 @@
 						var el = $(this);
 						setTimeout( function () {
 							var effect = el.data('animate-effect');
-							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn animated');
-							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft animated');
-							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight animated');
-							} else {
-								el.addClass('fadeInUp animated');
+							switch(effect){
+								case 'fadeIn':
+									el.addClass('fadeIn animated');
+									break;
+								case 'fadeInLeft':
+									el.addClass('fadeInLeft animated');
+									break;
+								case 'fadeInRight':
+									el.addClass('fadeInRight animated');
+									break;
+								case 'fadeInDown':
+									el.addClass('fadeInDown animated');
+									break;
+								case 'fadeInUp':
+								default:
+									el.addClass('fadeInUp animated');
+									break;
 							}
 
 							el.removeClass('item-animate');
